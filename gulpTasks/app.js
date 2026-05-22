@@ -31,9 +31,14 @@ function appJS(callback) {
 }
 
 function appIMG(callback) {
-    return gulp.src('src/assets/imgs/**.*')
+    return gulp.src('src/assets/imgs/**.*', {encoding: false})
         .pipe(gulp.dest('build/assets/imgs'));
 }
+
+gulp.task('appHTML', appHTML);
+gulp.task('appCSS', appCSS);
+gulp.task('appJS', appJS);
+gulp.task('appIMG', appIMG);
 
 module.exports = {
     appHTML,
